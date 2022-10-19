@@ -1,0 +1,11 @@
+#compiling files
+*/*/*.o
+*/*/a.out
+
+#executable files
+
+00/ex00/megaphone
+
+#editor files
+.code
+.idea
