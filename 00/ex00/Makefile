@@ -13,29 +13,29 @@ RESET			= \033[0m
 # Variables
 SRCS		= main.cpp
 OBJS		= $(SRCS:.cpp=.o)
-INCLUDES	= $(INCLUDE_DIR)
+INCS		= -I $(INCLUDE_DIR)
 
 INCLUDE_DIR	= .
 
 NAME		= megaphone
 
-CFLAGS		= -Wall -Werror -Wextra -pedantic -std=c++98 -fsanitize=address
+CXXFLAGS	= $(INCS) -Wall -Werror -Wextra -pedantic -Ofast -std=c++98 -Wsign-conversion -fsanitize=address
 
 # Commands
-CC			= g++
+CXX			= c++
 ECHO		= echo -e
 RM			= rm -rf
 
 ## Functions
 %.o : %.cpp
 	@$(ECHO) "$(GREEN)>>> Compiling $(WHITE)$< $(GREEN)-> $(WHITE)$@$(RESET)"
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(ECHO) "$(GREEN)>>>>> $(WHITE)linking $(GREEN)<<<<<$(RESET)"
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	@$(ECHO) "$(RED)>>>>>$(WHITE) Deleting object files $(RED)<<<<<$(RESET)"
