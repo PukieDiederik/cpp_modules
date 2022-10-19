@@ -19,7 +19,7 @@ INCLUDE_DIR	= .
 
 NAME		= megaphone
 
-CXXFLAGS	= $(INCS) -Wall -Werror -Wextra -pedantic -Ofast -std=c++98 -Wsign-conversion -fsanitize=address
+CXXFLAGS	= $(INCS) -Wall -Werror -Wextra -pedantic -Ofast -std=c++98 -Wsign-conversion -g -fsanitize=address
 
 # Commands
 CXX			= c++

@@ -18,4 +18,5 @@ int main(int argc, char** argv)
 	}
 	// Finish with a newline
 	std::cout << std::endl;
+	return (0);
 }
