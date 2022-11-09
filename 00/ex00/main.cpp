@@ -14,7 +14,7 @@ int main(int argc, char** argv)
 		int	j = 0;
 		// Loop over each letter
 		while (argv[i][j] != '\0')
-			std::cout << (char)toupper(argv[i][j++]);
+			std::cout << (char)std::toupper(argv[i][j++]);
 	}
 	// Finish with a newline
 	std::cout << std::endl;

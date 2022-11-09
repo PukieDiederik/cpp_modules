@@ -11,13 +11,13 @@ WHITE			= \033[0;38m
 RESET			= \033[0m
 
 # Variables
-SRCS		= main.cpp
+SRCS		= main.cpp Phonebook.cpp Contact.cpp
 OBJS		= $(SRCS:.cpp=.o)
 INCS		= -I $(INCLUDE_DIR)
 
 INCLUDE_DIR	= .
 
-NAME		= megaphone
+NAME		= phonebook
 
 CXXFLAGS	= $(INCS) -Wall -Werror -Wextra -pedantic -Ofast -std=c++98 -Wsign-conversion -g -fsanitize=address
 
