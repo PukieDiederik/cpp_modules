@@ -2,7 +2,7 @@
 #ifndef PHONEBOOK_H
 #define PHONEBOOK_H
 
-#include "Contact.h"
+#include "Contact.hpp"
 
 #define MAX_CONTACTS 8
 
@@ -13,7 +13,7 @@ private:
 	unsigned int m_cur_contact_index; // What the next index to be modified is
 public:
 	// Constructors
-	Phonebook() : m_initialized_contacts(0), m_cur_contact_index(0) { }
+	Phonebook();
 
 	// Member functions
 	void print() const;

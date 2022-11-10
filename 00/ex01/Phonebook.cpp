@@ -1,6 +1,9 @@
-#include "Phonebook.h"
+#include "Phonebook.hpp"
 #include <iostream>
 #include <iomanip>
+
+//Constructors/Destructors
+Phonebook::Phonebook() : m_initialized_contacts(0), m_cur_contact_index(0) { }
 
 void Phonebook::print() const
 {

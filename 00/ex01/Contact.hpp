@@ -13,12 +13,9 @@ private:
 
 public:
 	// Constructors
-	Contact() {};
+	Contact();
 	Contact(const std::string& f_name, const std::string& l_name, const std::string& n_name,
-			const std::string& p_num, const std::string& secret)
-		:m_first_name(f_name), m_last_name(l_name), m_nickname(n_name), m_phone_number(p_num), m_secret(secret)
-	{
-	}
+			const std::string& p_num, const std::string& secret);
 
 	// Operators
 	Contact& operator=(const Contact& contact);
