@@ -4,7 +4,7 @@
 
 int main(int argc, char **argv)
 {
-	if (argc < 2)
+	if (argc != 2)
 	{
 		std::cerr << "Incorrect usage: ./harlFilter [log_level]\n";
 		return (1);
@@ -14,16 +14,16 @@ int main(int argc, char **argv)
 	switch (h.get_level_id(s))
 	{
 		case 0:
-			h.debug();
+			h.complain("DEBUG");
 			//falls through
 		case 1:
-			h.info();
+			h.complain("INFO");
 			//falls through
 		case 2:
-			h.warning();
+			h.complain("WARNING");
 			//falls through
 		case 3:
-			h.error();
+			h.complain("ERROR");
 			break;
 		default:
 			std::cerr << "Invalid Debug level\n";
