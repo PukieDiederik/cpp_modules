@@ -37,7 +37,7 @@ Bureaucrat::GradeTooLowException& Bureaucrat::GradeTooLowException::operator=(
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() { return "Grade is too low"; }
 
-// Constructors
+// Constructors / Destructors
 Bureaucrat::Bureaucrat(const std::string &name, int grade) :m_name(name), m_grade(grade)
 {
 	if (grade < 1)
@@ -49,6 +49,8 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) :m_name(name), m_grad
 		throw Bureaucrat::GradeTooLowException();
 	}
 }
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : m_name(copy.m_name), m_grade(copy.m_grade){ }
+
 Bureaucrat::~Bureaucrat() {}
 
 // Operators

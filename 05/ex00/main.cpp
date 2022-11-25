@@ -49,4 +49,14 @@ int main()
 	try { b.demote_grade(); }
 	catch (std::exception& e) { std::cerr << e.what() << std::endl; }
 	std::cout << b << std::endl;
+
+	std::cout << ">>> Testing using copy constructor <<<" << std::endl;
+	Bureaucrat c(a);
+	std::cout << c << std::endl;
+	c.demote_grade();
+	std::cout << a << "; " << c << std::endl;
+	Bureaucrat d(b);
+	std::cout << d << std::endl;
+	d.promote_grade();
+	std::cout << b << "; " << d << std::endl;
 }

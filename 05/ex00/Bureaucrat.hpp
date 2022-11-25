@@ -12,7 +12,6 @@ private:
 
 	// Constructors/Destructors
 	Bureaucrat();
-	Bureaucrat(const Bureaucrat& copy);
 
 	// Operators
 	Bureaucrat& operator=(const Bureaucrat& copy);
@@ -52,6 +51,7 @@ public:
 
 	// Constructors/Destructors
 	Bureaucrat(const std::string& name, int grade);
+	Bureaucrat(const Bureaucrat& copy);
 
 	~Bureaucrat();
 
