@@ -1,0 +1,82 @@
+#include "Bureaucrat.hpp"
+
+// Exceptions
+//  Grade too high
+Bureaucrat::GradeTooHighException::GradeTooHighException() {}
+Bureaucrat::GradeTooHighException::GradeTooHighException(const Bureaucrat::GradeTooHighException& copy)
+{
+	*this = copy;
+}
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() {}
+
+Bureaucrat::GradeTooHighException& Bureaucrat::GradeTooHighException::operator=(
+		const Bureaucrat::GradeTooHighException& copy
+		)
+{
+	std::exception::operator=(copy);
+	return *this;
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw() { return "Grade is too high"; }
+
+//  Grade too low
+Bureaucrat::GradeTooLowException::GradeTooLowException() { }
+Bureaucrat::GradeTooLowException::GradeTooLowException(const Bureaucrat::GradeTooLowException& copy)
+{
+	*this = copy;
+}
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw(){}
+
+Bureaucrat::GradeTooLowException& Bureaucrat::GradeTooLowException::operator=(
+		const Bureaucrat::GradeTooLowException& copy
+		)
+{
+	std::exception::operator=(copy);
+	return *this;
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw() { return "Grade is too low"; }
+
+// Constructors
+Bureaucrat::Bureaucrat(const std::string &name, int grade) :m_name(name), m_grade(grade)
+{
+	if (grade < 1)
+	{
+		throw Bureaucrat::GradeTooHighException();
+	}
+	if (grade > 150)
+	{
+		throw Bureaucrat::GradeTooLowException();
+	}
+}
+Bureaucrat::~Bureaucrat() {}
+
+// Operators
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)
+{
+	os << b.getName() << ", grade: " << b.getGrade();
+	return os;
+}
+
+// Getters/Setters
+const std::string& Bureaucrat::getName() const { return m_name; }
+int Bureaucrat::getGrade() const { return m_grade; }
+
+// Functions
+int Bureaucrat::promote_grade()
+{
+	if (m_grade <= 1)
+		throw Bureaucrat::GradeTooHighException();
+	else
+		m_grade--;
+	return m_grade;
+}
+
+int Bureaucrat::demote_grade()
+{
+	if (m_grade >= 150)
+		throw Bureaucrat::GradeTooLowException();
+	else
+		m_grade++;
+	return m_grade;
+}
