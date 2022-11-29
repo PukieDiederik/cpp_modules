@@ -1,22 +1,25 @@
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
-#include <string>
 #include <exception>
+#include <string>
 #include <iostream>
 
-class Bureaucrat {
+class Bureaucrat;
+
+class Form {
 private:
 	const std::string m_name;
-	int m_grade;
+	bool m_is_signed;
+	const int m_req_sign_grade;
+	const int m_req_execute_grade;
 
 	// Constructors/Destructors
-	Bureaucrat();
+	Form();
 
 	// Operators
-	Bureaucrat& operator=(const Bureaucrat& copy);
+	Form& operator=(const Form& copy);
 public:
-	// Exceptions
 	class GradeTooHighException : public std::exception
 	{
 	public:
@@ -50,20 +53,19 @@ public:
 	};
 
 	// Constructors/Destructors
-	Bureaucrat(const std::string& name, int grade);
-	Bureaucrat(const Bureaucrat& copy);
-
-	~Bureaucrat();
+	Form(const std::string& name, int sign_grade, int exec_grade);
+	Form(const Form& copy);
 
 	// Getters/Setters
 	const std::string& getName() const;
-	int getGrade() const;
+	int getSignGrade() const;
+	int getExecGrade() const;
+	bool isSigned() const;
 
 	// Functions
-	int promoteGrade();
-	int demoteGrade();
+	void beSigned(const Bureaucrat& b);
 };
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
+std::ostream& operator<<(std::ostream& os, const Form& form);
 
 #endif

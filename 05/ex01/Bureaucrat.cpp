@@ -1,4 +1,6 @@
 #include "Bureaucrat.hpp"
+#include <exception>
+#include <iostream>
 
 // Exceptions
 //  Grade too high
@@ -81,4 +83,15 @@ int Bureaucrat::demoteGrade()
 	else
 		m_grade++;
 	return m_grade;
+}
+
+void Bureaucrat::signForm(Form& f)
+{
+	try { f.beSigned(*this); }
+	catch (std::exception& e)
+	{
+		std::cerr << m_name << " couldn't sign form because: " << e.what() << "\n";
+		return;
+	}
+	std::cout << m_name << " signed " << f.getName() << std::endl;
 }

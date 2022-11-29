@@ -1,6 +1,7 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#include "Form.hpp"
 #include <string>
 #include <exception>
 #include <iostream>
@@ -62,6 +63,7 @@ public:
 	// Functions
 	int promoteGrade();
 	int demoteGrade();
+	void signForm(Form& f);
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);

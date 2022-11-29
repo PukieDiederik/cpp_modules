@@ -24,14 +24,14 @@ int main()
 
 	Bureaucrat a("Subject A", 1);
 	std::cout << a << std::endl;
-	a.demote_grade();
+	a.demoteGrade();
 	std::cout << a << std::endl;
-	a.demote_grade();
+	a.demoteGrade();
 	std::cout << a << std::endl;
-	a.promote_grade();
-	a.promote_grade();
+	a.promoteGrade();
+	a.promoteGrade();
 	std::cout << a << std::endl;
-	try { a.promote_grade(); }
+	try { a.promoteGrade(); }
 	catch (std::exception& e) { std::cerr << e.what() << std::endl; }
 	std::cout << a << std::endl;
 
@@ -39,24 +39,24 @@ int main()
 
 	Bureaucrat b("Subject B", 150);
 	std::cout << b << std::endl;
-	b.promote_grade();
+	b.promoteGrade();
 	std::cout << b << std::endl;
-	b.promote_grade();
+	b.promoteGrade();
 	std::cout << b << std::endl;
-	b.demote_grade();
-	b.demote_grade();
+	b.demoteGrade();
+	b.demoteGrade();
 	std::cout << b << std::endl;
-	try { b.demote_grade(); }
+	try { b.demoteGrade(); }
 	catch (std::exception& e) { std::cerr << e.what() << std::endl; }
 	std::cout << b << std::endl;
 
 	std::cout << ">>> Testing using copy constructor <<<" << std::endl;
 	Bureaucrat c(a);
 	std::cout << c << std::endl;
-	c.demote_grade();
+	c.demoteGrade();
 	std::cout << a << "; " << c << std::endl;
 	Bureaucrat d(b);
 	std::cout << d << std::endl;
-	d.promote_grade();
+	d.promoteGrade();
 	std::cout << b << "; " << d << std::endl;
 }
