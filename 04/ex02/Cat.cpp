@@ -2,13 +2,13 @@
 #include <iostream>
 
 // Constructors/Destructors
-Cat::Cat() :Animal(), m_brain(new Brain())// default constructor
+Cat::Cat() :AAnimal(), m_brain(new Brain())// default constructor
 {
 	std::cout << "Cat default constructor called" << std::endl;
 	m_type = "cat";
 }
 
-Cat::Cat(const Cat& copy) :Animal(), m_brain(NULL)// copy constructor
+Cat::Cat(const Cat& copy) :AAnimal(), m_brain(NULL)// copy constructor
 {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = copy;

@@ -2,13 +2,13 @@
 #include <iostream>
 
 // Constructors/Destructors
-Dog::Dog() :m_brain(new Brain())// default constructor
+Dog::Dog() : AAnimal(), m_brain(new Brain())// default constructor
 {
 	std::cout << "Dog default constructor called" << std::endl;
 	m_type = "dog";
 }
 
-Dog::Dog(const Dog& copy) : Animal(), m_brain(NULL)// copy constructor
+Dog::Dog(const Dog& copy) : AAnimal(), m_brain(NULL)// copy constructor
 {
 	std::cout << "Dog copy constructor called" << std::endl;
 	*this = copy;

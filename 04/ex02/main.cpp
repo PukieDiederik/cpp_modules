@@ -5,7 +5,7 @@
 int main()
 {
 	std::cout << "Constructor/Destructor testing:" << std::endl;
-	Animal* a[6];
+	AAnimal* a[6];
 	for(int i = 0; i < 3; ++i)
 		a[i] = new Dog();
 	for(int i = 3; i < 6; ++i)

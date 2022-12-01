@@ -11,7 +11,7 @@ WHITE			= \033[0;38m
 RESET			= \033[0m
 
 # Variables
-SRCS		= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRCS		= main.cpp AAnimal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJS		= $(SRCS:.cpp=.o)
 INCS		= -I $(INCLUDE_DIR)
 

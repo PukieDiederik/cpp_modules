@@ -1,26 +1,26 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include <iostream>
 
 // Constructors/Destructors
-Animal::Animal()// default constructor
+AAnimal::AAnimal()// default constructor
 {
 	std::cout << "Animal default constructor called" << std::endl;
 	m_type = "animal";
 }
 
-Animal::Animal(const Animal& copy) // copy constructor
+AAnimal::AAnimal(const AAnimal& copy) // copy constructor
 {
 	std::cout << "Animal copy constructor called" << std::endl;
 	*this = copy;
 }
 
-Animal::~Animal() // destructor
+AAnimal::~AAnimal() // destructor
 {
 	std::cout << "Animal destructor called" << std::endl;
 }
 
 // Operators
-Animal& Animal::operator=(const Animal& copy) //copy-assignment
+AAnimal& AAnimal::operator=(const AAnimal& copy) //copy-assignment
 {
 	std::cout << "Animal operator= called" << std::endl;
 	m_type = copy.m_type;
@@ -28,7 +28,7 @@ Animal& Animal::operator=(const Animal& copy) //copy-assignment
 }
 
 // Getters/Setters
-const std::string& Animal::getType() const
+const std::string& AAnimal::getType() const
 {
 	return m_type;
 }

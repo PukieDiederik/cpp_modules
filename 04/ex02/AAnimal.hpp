@@ -3,20 +3,20 @@
 
 #include <string>
 
-class Animal {
+class AAnimal {
 protected:
 	std::string m_type;
 
 	// Constructors/Destructors
-	Animal(); // default constructor
-	Animal(const Animal& copy); // copy constructor
+	AAnimal(); // default constructor
+	AAnimal(const AAnimal& copy); // copy constructor
 
 public:
 	// Constructors/Destructors
-	virtual ~Animal(); // destructor
+	virtual ~AAnimal(); // destructor
 
 	// Operators
-	Animal& operator=(const Animal& copy); //copy-assignment
+	AAnimal& operator=(const AAnimal& copy); //copy-assignment
 
 	// Getters/Setters
 	const std::string& getType() const;
