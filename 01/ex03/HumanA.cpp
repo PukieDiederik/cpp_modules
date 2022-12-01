@@ -1,7 +1,7 @@
 #include "HumanA.hpp"
 #include <iostream>
 
-HumanA::HumanA(const std::string &name, Weapon& weapon)
+HumanA::HumanA(const std::string& name, Weapon& weapon)
 	:m_weapon(weapon), m_name(name) { }
 
 void HumanA::attack() const
