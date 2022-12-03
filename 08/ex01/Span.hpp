@@ -1,9 +1,11 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
+#include <vector>
+
 class Span {
 private:
-	int *m_nums;
+	std::vector<int> m_nums;
 	int m_size;
 	int m_amount_added;
 
