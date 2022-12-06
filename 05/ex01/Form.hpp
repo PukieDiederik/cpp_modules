@@ -55,6 +55,7 @@ public:
 	// Constructors/Destructors
 	Form(const std::string& name, int sign_grade, int exec_grade);
 	Form(const Form& copy);
+	~Form();
 
 	// Getters/Setters
 	const std::string& getName() const;

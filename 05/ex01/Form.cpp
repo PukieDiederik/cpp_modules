@@ -49,6 +49,7 @@ Form::Form(const std::string& name, int sign_grade, int exec_grade) : m_name(nam
 Form::Form(const Form &copy) :m_name(copy.m_name), m_is_signed(copy.m_is_signed),
 							  m_req_sign_grade(copy.m_req_sign_grade), m_req_execute_grade(copy.m_req_execute_grade) { }
 
+Form::~Form() { }
 
 // operators
 std::ostream& operator<<(std::ostream& os, const Form& form)
