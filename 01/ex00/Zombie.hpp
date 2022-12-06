@@ -6,7 +6,7 @@
 class Zombie {
 private:
 	std::string m_name;
-
+	Zombie();
 public:
 	// Constructors/Destructors
 	Zombie(std::string& name);

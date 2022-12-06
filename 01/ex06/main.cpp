@@ -26,6 +26,6 @@ int main(int argc, char **argv)
 			h.complain("ERROR");
 			break;
 		default:
-			std::cerr << "Invalid Debug level\n";
+			std::cerr << "Invalid level\n";
 	}
 }
