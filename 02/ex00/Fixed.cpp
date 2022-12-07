@@ -24,7 +24,7 @@ Fixed& Fixed::operator=(const Fixed& copy) //copy-assignment
 {
 	std::cout << "Calling copy opperator=" << std::endl;
 	m_value = copy.m_value;
-	return (*this);
+	return *this;
 }
 
 // Getters/Setters

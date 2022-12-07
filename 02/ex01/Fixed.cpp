@@ -36,7 +36,7 @@ Fixed& Fixed::operator=(const Fixed& copy) //copy-assignment
 {
 	std::cout << "Calling copy opperator=" << std::endl;
 	m_value = copy.m_value;
-	return (*this);
+	return *this;
 }
 
 std::ostream& operator<<(std::ostream& out, const Fixed& f) //output
