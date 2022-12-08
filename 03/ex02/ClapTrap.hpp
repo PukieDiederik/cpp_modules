@@ -4,6 +4,8 @@
 #include <string>
 
 class ClapTrap {
+private:
+	ClapTrap();
 protected:
 	std::string m_name;
 	int m_max_health;
@@ -12,7 +14,6 @@ protected:
 	int m_attack_damage;
 public:
 	// Constructor/Destructor
-	ClapTrap();
 	ClapTrap(const ClapTrap& copy);
 	ClapTrap(const std::string& name);
 

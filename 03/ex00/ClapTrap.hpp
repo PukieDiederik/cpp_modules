@@ -10,9 +10,10 @@ private:
 	int m_health;
 	int m_energy;
 	int m_attack_damage;
+
+	ClapTrap();
 public:
 	// Constructor/Destructor
-	ClapTrap();
 	ClapTrap(const ClapTrap& copy);
 	ClapTrap(const std::string& name);
 	ClapTrap(const std::string& name, int max_health, int health, int energy, int attack_damage);

@@ -1,28 +1,31 @@
 #include "ClapTrap.hpp"
+#include <iostream>
 
 int main()
 {
-	ClapTrap a;
+	ClapTrap a("John");
 	ClapTrap b(a);
-	ClapTrap c("John");
-	ClapTrap d("Jeremy");
+	ClapTrap c("Jeremy");
 
 	a = ClapTrap("Jason");
+
+	std::cout << "\n";
 
 	a.attack("Zombie");
 	b.attack("Zombie");
 	c.attack("Zombie");
-	d.attack("Zombie");
+
+	std::cout << "\n";
 
 	a.takeDamage(1);
 	b.takeDamage(3);
 	c.takeDamage(5);
-	d.takeDamage(7);
 
 	a.beRepaired(5);
 	b.beRepaired(5);
 	c.beRepaired(5);
-	d.beRepaired(5);
+
+	std::cout << "\n";
 
 	a.attack("Lowering energy");
 	a.attack("Lowering energy");
@@ -35,6 +38,8 @@ int main()
 	a.attack("Should not print"); // Shouldn't have any energy left
 	a.attack("Should not print");
 
-	d.takeDamage(9);
-	d.beRepaired(5);
+	std::cout << "\n";
+
+	b.takeDamage(11);
+	b.beRepaired(3);
 }

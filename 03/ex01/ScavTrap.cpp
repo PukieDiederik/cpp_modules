@@ -1,15 +1,6 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
-// Constructors/Destructors
-ScavTrap::ScavTrap() : ClapTrap("unnamed")
-{
-	std::cout << "Scavtrap default constructor called" << std::endl;
-	m_max_health = 100;
-	m_health = m_max_health;
-	m_energy = 50;
-	m_attack_damage = 20;
-}
 ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy)
 {
 	std::cout << "Scavtrap copy constructor called" << std::endl;
@@ -33,13 +24,9 @@ ScavTrap::~ScavTrap()
 void ScavTrap::guardGate()
 {
 	if (m_health <= 0)
-	{
 		std::cout << "ScavTrap " << m_name << " is dead" << std::endl;
-	}
 	else if (m_energy <= 0)
-	{
 		std::cout << "ScavTrap " << m_name << " is exhausted" << std::endl;
-	}
 	else
 	{
 		--m_energy;
@@ -50,13 +37,9 @@ void ScavTrap::guardGate()
 void ScavTrap::attack(const std::string &target)
 {
 	if (m_health <= 0)
-	{
 		std::cout << "ScavTrap " << m_name << " is dead" << std::endl;
-	}
 	else if (m_energy <= 0)
-	{
 		std::cout << "ScavTrap " << m_name << " is exhausted" << std::endl;
-	}
 	else
 	{
 		--m_energy;

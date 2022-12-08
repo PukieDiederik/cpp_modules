@@ -4,9 +4,11 @@
 #include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap{
+private:
+	ScavTrap();
+
 public:
 	// Constructors/Destructors
-	ScavTrap();
 	ScavTrap(const ScavTrap& copy);
 	ScavTrap(const std::string& name);
 
