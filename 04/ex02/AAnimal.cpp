@@ -32,5 +32,3 @@ const std::string& AAnimal::getType() const
 {
 	return m_type;
 }
-
-// Functions

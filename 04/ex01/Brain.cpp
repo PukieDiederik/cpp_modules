@@ -38,5 +38,3 @@ void Brain::setIdea(unsigned int index, const std::string& idea)
 	if (index < 100)
 		m_ideas[index] = idea;
 }
-
-// Functions

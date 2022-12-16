@@ -34,5 +34,4 @@ int main()
 	std::cout << "b[5]: " << *b->getBrain()->getIdea(5) << std::endl;
 	std::cout << "c[5]: " << *c.getBrain()->getIdea(5) << std::endl;
 	delete b;
-
 }
