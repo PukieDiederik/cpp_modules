@@ -90,19 +90,20 @@ void printFromInt(const std::string& str)
 	char *end;
 
 	// Need to use strtol here because otherwise I can't check for overflow. And there isn't a strtoi version for c++98
-	int i = std::strtol(str.c_str(), &end, 10);
-	if (end != str.c_str() + str.length() - 1)
+	long int i = std::strtol(str.c_str(), &end, 10);
+	if (i > 2147483647 || i < -2147483648 || end != str.c_str() + str.length())
 	{
 		printNums(0, 0, 0.0f, 0.0, false, false, false, false);
 		return;
 	}
-	char c = static_cast<char>(i);
-	float f = static_cast<float>(i);
-	double d = static_cast<double>(i);
+	int ic = std::atoi(str.c_str());
+	char c = static_cast<char>(ic);
+	float f = static_cast<float>(ic);
+	double d = static_cast<double>(ic);
 
-	if (static_cast<int>(c) != i)
+	if (static_cast<int>(c) != ic)
 		is_c_possible = false;
-	printNums(c, i, f, d, is_c_possible, true, true, true);
+	printNums(c, ic, f, d, is_c_possible, true, true, true);
 }
 
 void printFromFloat(const std::string& str)
@@ -208,8 +209,8 @@ void printNums(char c, int i, float f, double d, bool is_c_possible, bool is_i_p
 	// floats
 	if (!is_f_possible)
 		std::cout << "float: Impossible conversion" << std::endl;
-	else if (std::isnan(f) || std::isinf(f) || f - static_cast<int>(f) == 0.0f)
-		std::cout << "float: " << f << "f" << std::endl;
+	else if (std::isnan(f) || std::isinf(f) || f - static_cast<long int>(f) == 0.0f)
+		std::cout << std::fixed << std::setprecision(1) << "float: " << f << "f" << std::endl;
 	else
 		std::cout << std::fixed << std::setprecision(4) << "float: " << f << "f" << std::endl;
 
@@ -217,11 +218,11 @@ void printNums(char c, int i, float f, double d, bool is_c_possible, bool is_i_p
 	if (!is_d_possible)
 		std::cout << "double: Impossible conversion" << std::endl;
 	else if (std::isnan(d) || std::isinf(d))
-		std::cout << "float: " << d << std::endl;
-	else if (d - static_cast<int>(d) == 0.0f)
-		std::cout << std::fixed << std::setprecision(1) << "float: " << d << std::endl;
+		std::cout << "double: " << d << std::endl;
+	else if (d - static_cast<long int>(d) == 0.0f)
+		std::cout << std::fixed << std::setprecision(1) << "double: " << d << std::endl;
 	else
-		std::cout << std::fixed << std::setprecision(4) << "float: " << d << std::endl;
+		std::cout << std::fixed << std::setprecision(4) << "double: " << d << std::endl;
 }
 
 int main(int argc, char **argv)
