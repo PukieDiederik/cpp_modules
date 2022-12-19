@@ -32,5 +32,7 @@ AForm* Intern::makeForm(std::string name, std::string target)
 	}
 	if (!ret)
 		std::cerr << "Invalid Form" << std::endl;
+	else
+		std::cout << "Intern created: " << ret->getName() << " form" << std::endl;
 	return ret;
 }
