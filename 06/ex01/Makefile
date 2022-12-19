@@ -11,7 +11,7 @@ WHITE			= \033[0;38m
 RESET			= \033[0m
 
 # Variables
-SRCS		= main.cpp Data.cpp
+SRCS		= main.cpp
 OBJS		= $(SRCS:.cpp=.o)
 INCS		= -I $(INCLUDE_DIR)
 

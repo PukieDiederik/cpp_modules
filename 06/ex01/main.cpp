@@ -14,29 +14,13 @@ Data* deserialize(uintptr_t raw)
 }
 int main()
 {
-	int i = 42;
-	Data d(&i);
-	uintptr_t serialized;
+	data d1 = {42, "Hello World!"};
 
-	std::cout << "d original v    : " << *reinterpret_cast<int*>(d.getData()) << std::endl;
-	std::cout << "d pointer       : " << &d << std::endl;
-	serialized = serialize(&d);
-	std::cout << "d serialized    : " << std::showbase << std::hex << serialized
-									  << std::dec << ", " << serialized << std::endl;
-	std::cout << "d deserialized v: " << *reinterpret_cast<int*>(deserialize(serialized)->getData()) << std::endl;
-
-	std::string s = "Hello World!";
-	d = Data(&s);
-
-	std::cout << "\n---\n" << std::endl;
-
-	std::cout << "d original v    : " << *reinterpret_cast<std::string*>(d.getData()) << std::endl;
-	std::cout << "d pointer       : " << &d << std::endl;
-	serialized = serialize(&d);
-	std::cout << "d serialized    : " << std::showbase << std::hex << serialized
-			 						  << std::dec << ", " << serialized << std::endl;
-	std::cout << "d deserialized v: " << *reinterpret_cast<std::string*>(deserialize(serialized)->getData())
-			  << std::endl;
-
+	uintptr_t iptr = serialize(&d1);
+	std::cout << d1.str << ", " << d1.i << std::endl;
+	std::cout << std::hex << iptr << ", " << &d1 << ", " << std::dec << iptr << std::endl;
+	data *d2 = deserialize(iptr);
+	std::cout << d2 << ", " << d2->str << ", " << d2->i << std::endl;
+	std::cout << &d2->str << ", " << &d1.str << std::endl;
 
 }
