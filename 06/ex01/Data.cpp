@@ -3,6 +3,8 @@
 Data::Data(void* data) :m_data(data) { }
 Data::Data(const Data& copy) :m_data(copy.m_data) { }
 
+Data::~Data() { }
+
 Data& Data::operator=(const Data& copy)
 {
 	m_data = copy.m_data;

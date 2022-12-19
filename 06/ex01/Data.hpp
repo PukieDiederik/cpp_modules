@@ -11,6 +11,8 @@ public:
 	Data(void* data);
 	Data(const Data& copy); // (!) THIS WILL NOT CREATE A COPY OF THE DATA
 
+	~Data();
+
 	Data& operator=(const Data& copy); // (!) THIS WILL NOT CREATE A COPY OF THE DATA
 
 	void* getData();
