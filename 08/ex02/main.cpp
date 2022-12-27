@@ -15,13 +15,29 @@ int main() {
 		mstack.push(5);
 		mstack.push(737);
 		mstack.push(0);
-		MutantStack<int>::iterator it = mstack.begin();
-		MutantStack<int>::iterator ite = mstack.end();
-		++it;
-		--it;
-		while (it != ite) {
-			std::cout << *it << std::endl;
+		std::cout << std::endl;
+		{
+			MutantStack<int>::iterator it = mstack.begin();
+			MutantStack<int>::iterator ite = mstack.end();
 			++it;
+			--it;
+
+			// normal
+			while (it != ite) {
+				std::cout << *it << std::endl;
+				++it;
+			}
+		}
+		std::cout << std::endl;
+		{
+			MutantStack<int>::reverse_iterator it = mstack.rbegin();
+			MutantStack<int>::reverse_iterator ite = mstack.rend();
+
+			// reverse
+			while (it != ite) {
+				std::cout << *it << std::endl;
+				++it;
+			}
 		}
 		std::stack<int> s(mstack);
 	}
@@ -39,13 +55,27 @@ int main() {
 		mstack.push_back(5);
 		mstack.push_back(737);
 		mstack.push_back(0);
-		std::list<int>::iterator it = mstack.begin();
-		std::list<int>::iterator ite = mstack.end();
-		++it;
-		--it;
-		while (it != ite) {
-			std::cout << *it << std::endl;
+		std::cout << std::endl;
+		{
+			std::list<int>::iterator it = mstack.begin();
+			std::list<int>::iterator ite = mstack.end();
 			++it;
+			--it;
+			while (it != ite) {
+				std::cout << *it << std::endl;
+				++it;
+			}
+		}
+		std::cout << std::endl;
+		{
+			std::list<int>::reverse_iterator it = mstack.rbegin();
+			std::list<int>::reverse_iterator ite = mstack.rend();
+
+			// reverse
+			while (it != ite) {
+				std::cout << *it << std::endl;
+				++it;
+			}
 		}
 	}
 
