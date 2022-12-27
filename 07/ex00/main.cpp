@@ -10,9 +10,10 @@ class A
 int main()
 {
 	int a = 5;
-	int b = 3;
+	const int b = 3;
+	int c = 7;
 
-	::swap(a, b);
+	::swap(a, c);
 	std::cout << a << ", " << b << std::endl;
 
 	std::cout << ::min(a, b) << std::endl;
@@ -21,7 +22,7 @@ int main()
 	std::cout << ::max(6,6) << std::endl;
 
 	a = 5;
-	b = 5;
-	std::cout << &a << ", " << &b << std::endl;
-	std::cout << &::min(a,b) << ", " << &::max(a,b) << std::endl;
+	c = 5;
+	std::cout << &a << ", " << &c << std::endl;
+	std::cout << &::min(a,c) << ", " << &::max(a,c) << std::endl;
 }
