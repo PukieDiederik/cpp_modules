@@ -22,4 +22,8 @@ int main()
 	catch (std::exception& e) { std::cerr << e.what() << "\n"; }
 	b[4] = 12;
 	std::cout << a[4] << ", " << b[4] << std::endl;
+	{
+		const ::Array<int> c(a);
+		std::cout << a[1] << std::endl;
+	}
 }

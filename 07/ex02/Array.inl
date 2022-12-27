@@ -37,6 +37,13 @@ T& Array<T>::operator[](int n) {
 	return m_arr[n];
 }
 
+template <typename T>
+const T& Array<T>::operator[](int n) const{
+	if (n < 0 || static_cast<unsigned int>(n) >= m_size)
+		throw (std::range_error("out of range"));
+	return m_arr[n];
+}
+
 // Functions
 template <typename T>
 unsigned int Array<T>::size() const

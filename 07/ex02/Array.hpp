@@ -19,8 +19,9 @@ public:
 	// Operators
 	Array<T>& operator=(const Array<T>& copy);
 	T& operator[](int n);
+	const T& operator[](int n) const;
 
-	// Functions
+		// Functions
 	unsigned int size() const;
 };
 
