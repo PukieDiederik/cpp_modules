@@ -7,7 +7,7 @@ Array<T>::Array() :m_arr(NULL), m_size(0) { }
 template <typename T>
 Array<T>::Array(unsigned int n) :m_arr(new T[n]()), m_size(n) { }
 template <typename T>
-Array<T>::Array(Array<T>& copy)
+Array<T>::Array(Array<T>& copy) :m_arr(NULL)
 {
 	*this = copy;
 }
