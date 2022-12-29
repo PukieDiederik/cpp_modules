@@ -6,15 +6,15 @@
 class Span {
 private:
 	std::vector<int> m_nums;
-	int m_size;
-	int m_amount_added;
+	unsigned int m_size;
+	unsigned int m_amount_added;
 
 	// Constructors/Destructors
 	Span(); // default constructor
 public:
 	// Constructors/Destructors
 	Span(const Span& copy); // copy constructor
-	Span(int n);
+	Span(unsigned int n);
 
 	~Span(); // destructor
 

@@ -5,7 +5,7 @@
 #include <iostream>
 
 // Constructors/Destructors
-Span::Span(int n) : m_nums(0), m_size(n), m_amount_added(0)
+Span::Span(unsigned int n) : m_nums(0), m_size(n), m_amount_added(0)
 {
 	if (m_size < 2)
 		throw std::runtime_error("Invalid size");

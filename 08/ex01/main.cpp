@@ -24,8 +24,6 @@ int main() {
 	catch (std::exception& e) { std::cerr << e.what() << "\n"; }
 	try { Span sp(0); }
 	catch (std::exception& e) { std::cerr << e.what() << "\n"; }
-	try { Span sp(-5); }
-	catch (std::exception& e) { std::cerr << e.what() << "\n"; }
 	try { Span sp(2); sp.shortestSpan(); }
 	catch (std::exception& e) { std::cerr << e.what() << "\n"; }
 	try { Span sp(2); sp.longestSpan(); }
